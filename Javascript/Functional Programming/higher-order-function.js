@@ -26,3 +26,7 @@ transform(input);
 // for sequence
 const transformPipe = pipe(  trim, wrapInDiv,toLowercase); //here it first trim input then  tolowercase then wrap in div
 transformPipe(input)
+
+
+// currying 
+const wrapInSpan = (type, str) => `<${type}>${str}</${type}>`
