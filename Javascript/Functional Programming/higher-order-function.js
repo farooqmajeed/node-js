@@ -29,4 +29,7 @@ transformPipe(input)
 
 
 // currying 
-const wrapInSpan = (type, str) => `<${type}>${str}</${type}>`
+const wrap = type => str => `<${type}>${str}</${type}>`
+
+const transformCurr = pipe(trim, toLowercase, wrap("div"))
+console.log(transformCurr(input));
