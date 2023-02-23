@@ -34,3 +34,23 @@ objeFunc.name = "";
 // objeFunc['name'] = "name";
 const targetMember = 'name';
 objeFunc.[targetMember] = 'new name';
+
+// this behaviour is different in javascript from other languages like C# or java;
+
+//  this always returns the reference to the current object
+const personObject = {
+    name: "John",
+    walk(){
+        console.log(this);
+    }
+}
+personObject.walk();
+ //{name: 'John', walk: ƒ} returns the reference to the walk object
+
+const walk = personObject.walk;
+
+walk(); // undefined 
+
+//  the value of this depends how the function is called
+//  if the function is called as method in obj it returns the reference of a object;
+// if we call a function as standalone function or outside of a  object it returns the global object like window object
