@@ -17,3 +17,8 @@ const removed = numbers.filter(n=> n!== 2);
 // updating
 
 const updatedArr = numbers.map(n => n===2  ? 20 : n )
+
+
+// var -> scope to the function
+// let -> scope to the block
+// const  -> blocked scope || can  not be re assigned
