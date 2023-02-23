@@ -53,4 +53,14 @@ walk(); // undefined
 
 //  the value of this depends how the function is called
 //  if the function is called as method in obj it returns the reference of a object;
-// if we call a function as standalone function or outside of a  object it returns the global object like window object
+// if we call a function as standalone function or outside of a object it returns the global object like window object
+
+// binding this
+
+//if we call a function as standalone function or outside of a object
+//   every function in javascript is object
+
+const walk = personObject.walk.bind(personObject);
+
+walk()  //{name: 'John', walk: ƒ}
+
