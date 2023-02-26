@@ -2,6 +2,9 @@ const express = require("express");
 
 const app = express();
 
+//  added express middleware
+app.use(express.json());
+
 // we have four methods
 
 const courses = [
@@ -30,6 +33,26 @@ app.get("/api/courses/:id", (req, res) => {
   const course = courses.find((c) => c.id === req.params.id);
   console.log("====", course);
   if (!course) res.status(404).send("The course is not available");
+  res.send(course);
+});
+
+
+// added new course to the course array
+
+app.post("/api/courses", (req, res) => {
+  // input validation
+  if(!req.body.name || req.body.name.length > 3){
+    return res.status(400).send({
+      message: "Please provide a valid name",
+    });
+  }
+
+
+  const course = {
+    id: courses.length + 1,
+    name: req.body.name,
+  }
+  courses.push(course);
   res.send(course);
 });
 
