@@ -1,5 +1,7 @@
 const express = require("express");
 
+const Joi  = require('joi');
+
 const app = express();
 
 //  added express middleware
@@ -41,12 +43,19 @@ app.get("/api/courses/:id", (req, res) => {
 
 app.post("/api/courses", (req, res) => {
   // input validation
-  if(!req.body.name || req.body.name.length > 3){
-    return res.status(400).send({
-      message: "Please provide a valid name",
-    });
-  }
+  // if(!req.body.name || req.body.name.length > 3){
+  //   return res.status(400).send({
+  //     message: "Please provide a valid name",
+  //   });
+  // }
+ const scheme = {
+  name : Joi.string().min(3).required()
+ }
 
+ const result = Joi.validate(req.body, scheme);
+ if(result.error){
+  res.status(400).send(result.error.detail[0].message);
+ }
 
   const course = {
     id: courses.length + 1,
