@@ -20,14 +20,17 @@ app.get('/api/courses', (req, res) => {
 
 // for the  specific id of course
 app.get('/api/courses/:id', (req, res) => {
-  res,send(req.params.id);
+  res.send(req.params.id);
 });
 
 // for specific params in url
 app.get('/api/post/:year/:month', (req, res) => {
-  res,send(req.params.id); // return send { year: '2023', month: '1',}
+  res.send(req.params.id); // return send { year: '2023', month: '1',}
 });
-
+// for specific query in url
+app.get('/api/post/:year/:month', (req, res) => {
+  res.send(req.query); // return send {sortBy:'name'}
+});
 app.listen(3000, () => {
 console.log('Server');
 });
