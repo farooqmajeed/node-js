@@ -38,7 +38,13 @@ app.get("/api/courses/:id", (req, res) => {
   res.send(course);
 });
 
-
+function validateCourse(course) {
+  const scheme = {
+    name : Joi.string().min(3).required()
+   }
+  
+   return Joi.validate(course, scheme);
+}
 // added new course to the course array
 
 app.post("/api/courses", (req, res) => {
@@ -48,12 +54,12 @@ app.post("/api/courses", (req, res) => {
   //     message: "Please provide a valid name",
   //   });
   // }
- const scheme = {
-  name : Joi.string().min(3).required()
- }
-
- const result = Joi.validate(req.body, scheme);
- if(result.error){
+//  const scheme = {
+//   name : Joi.string().min(3).required()
+//  }
+  const {error} = validateCourse(req.body);
+//  const result = Joi.validate(req.body, scheme);
+ if(error){
   res.status(400).send(result.error.detail[0].message);
  }
 
@@ -63,6 +69,31 @@ app.post("/api/courses", (req, res) => {
   }
   courses.push(course);
   res.send(course);
+});
+
+//update api
+app.put('/api/courses/:id', (req, res) => {
+
+  const course = courses.findIndex((c) => c.id === req.params.id);
+  if (course <= -1) res.status(404).send("The course is not available");
+  const {error} = validateCourse(req.body);
+   if(error){
+    res.status(400).send(result.error.detail[0].message);
+   }
+
+
+  course.name = req.body.name;
+  res.send(course);
+
+});
+
+app.delete('/api/courses/:id', (req, res) => {
+  const course = courses.findIndex((c) => c.id === req.params.id);
+  if (course <= -1) res.status(404).send("The course is not available");
+
+  const index = courses.findIndex(course);
+  courses.splice(index, 1);
+  res.status(course);
 });
 
 // for specific params in url
