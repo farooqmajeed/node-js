@@ -23,6 +23,11 @@ app.get('/api/courses/:id', (req, res) => {
   res,send(req.params.id);
 });
 
+// for specific params in url
+app.get('/api/post/:year/:month', (req, res) => {
+  res,send(req.params.id); // return send { year: '2023', month: '1',}
+});
+
 app.listen(3000, () => {
 console.log('Server');
 });
