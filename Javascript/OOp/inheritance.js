@@ -26,3 +26,9 @@ class Teacher extends Person {
 
 const teacher = new Teacher("Inheritance");
 
+// Abstraction
+//  “displays” only the relevant attributes of objects and “hides” the unnecessary details.
+// simpler interface
+// Reduce the impact of changes
+//   
+
