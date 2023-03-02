@@ -1,0 +1,25 @@
+.input-class{
+    background-color: aqua;
+    width: 50px;
+    height: 25px;
+    border: 1px solid lightgray;
+    font-family: cursive;
+}
+
+.header{
+    font-family: sans-serif;
+	height: 65px;	
+	background-color: aqua;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 24px;
+	font-weight: 500;
+}
+.centered-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
