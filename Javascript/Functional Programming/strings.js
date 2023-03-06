@@ -15,6 +15,11 @@ const areEqual = (str1, str2, locale = "en-US") =>
 areEqual("ß", "ss", "de"); // false
 areEqual("ı", "I", "tr"); // true
 
+// String primitives and String objects
+// Note that JavaScript distinguishes between String objects and primitive string values. (The same is true of Boolean and Numbers.)
+
+
+
 const strPrim = "foo"; // A literal is a string primitive
 const strPrim2 = String(1); // Coerced into the string primitive "1"
 const strPrim3 = String(true); // Coerced into the string primitive "true"
@@ -24,3 +29,13 @@ console.log(typeof strPrim); // "string"
 console.log(typeof strPrim2); // "string"
 console.log(typeof strPrim3); // "string"
 console.log(typeof strObj); // "object"
+
+
+const s1 = "2 + 2"; // creates a string primitive
+const s2 = new String("2 + 2"); // creates a String object
+console.log(eval(s1)); // returns the number 4
+console.log(eval(s2)); // returns the string "2 + 2"
+
+
+// A String object can always be converted to its primitive counterpart with the valueOf() method.
+console.log(eval(s2.valueOf())); // returns the number 4
