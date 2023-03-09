@@ -1,13 +1,14 @@
 import React, { useCallback, useState } from "react";
-import { Todos } from "./todos";
+import  Todos  from "./todos";
 
 const CallBackHook = () => {
   const [count, setCount] = useState(0);
   const [todos, setTodos] = useState([]);
 
-  const addTodo = (todo) => {
+
+  const addTodo = useCallback(() =>{
     setTodos((prev) => [...prev, "New Entry"]);
-  };
+  },[todos]);
 
   const increament = () => {
     setCount(count + 1);

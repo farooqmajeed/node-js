@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { memo } from 'react'
 
-export const Todos = (props) => {
+ const Todos = (props) => {
+  console.log("Call")
   return (
     <div>
         <h1> Add Todos</h1>
@@ -16,3 +17,5 @@ export const Todos = (props) => {
         </div>
   )
 }
+
+export default memo(Todos);
