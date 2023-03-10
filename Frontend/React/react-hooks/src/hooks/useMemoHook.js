@@ -21,6 +21,7 @@ const UseMemoHook = () => {
   }, [counter]);
   return (
     <div>
+         <header className="App-header">React Use Memo Hooks</header>
       <button onClick={getValue} style={{ backgroundColor: "red" }}>
         Counter Click
       </button>
