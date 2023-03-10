@@ -3,6 +3,7 @@ import './App.css';
 import UseStateHook from './hooks/useStateHook'
 import ContextHook from './hooks/useContextHook'
 import CallBackHook from './hooks/useCallbackHook';
+import UseMemoHook from './hooks/useMemoHook';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       </header>
       <UseStateHook />
       <ContextHook /> */}
-      <CallBackHook />
+      <UseMemoHook />
     </div>
   );
 }
