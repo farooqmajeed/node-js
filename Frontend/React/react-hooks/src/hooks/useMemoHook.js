@@ -14,11 +14,11 @@ const UseMemoHook = () => {
     return num;
   };
   // here you can see the rerender item is called if there is no change in that item like toggle here
-  const checkData  = countNumber(counter);
+//   const checkData  = countNumber(counter);
 
-//   const checkData = useMemo(() => {
-//     return countNumber(counter);
-//   }, [counter]);
+  const checkData = useMemo(() => {
+    return countNumber(counter);
+  }, [counter]);
   return (
     <div>
       <button onClick={getValue} style={{ backgroundColor: "red" }}>
