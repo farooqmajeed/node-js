@@ -2,6 +2,8 @@
 // import { Inter } from "next/font/google";
 // import styles from "./page.module.css";
 
+import Movies from "./movie";
+
 // const inter = Inter({ subsets: ["latin"] });
 
 export default async function Home() {
@@ -13,13 +15,17 @@ export default async function Home() {
 
   return (
     <main>
-      {/* <h1>hello next 13</h1> */}
-
-      {res.results.map((movie) => (
-        <div>
-          <h1>{movie.title}</h1>
-        </div>
-      ))}
+      <div className="grid gap-16 grid-cols-fluid">
+        {res.results.map((movie) => (
+          <Movies
+            key={movie.id}
+            id={movie.id}
+            title={movie.title}
+            release_date={movie.release_date}
+            poster_path={movie.poster_path}
+          />
+        ))}
+      </div>
     </main>
   );
 }
