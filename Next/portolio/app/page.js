@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import styles from "./page.module.css";
 import { BsFillMoonStarsFill } from "react-icons/bs";
@@ -16,22 +17,27 @@ import web3 from "../public/web3.png";
 import web4 from "../public/web4.png";
 import web5 from "../public/web5.png";
 import web6 from "../public/web6.png";
+import {useState} from "react";
 
 
 export default function Home() {
+  const [darkMode, setDarMode] = useState(false);
   return (
-    <main className="bg-white px-10 md:px-20 lg:px-40">
+    <div className={darkMode ? "dark": ""}>
+
+    
+    <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
       <section className="min-h-screen">
         <nav className="py-10 mb-12 flex justify-between">
-          <h1 className="text-xl font-burtons"> developedByFM</h1>
+          <h1 className="text-xl font-burtons dark:text-white"> developedByFM</h1>
           <ul className="flex items-center">
             <li>
               {" "}
-              <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+              <BsFillMoonStarsFill className="cursor-pointer text-2xl  dark:text-white" onClick={() =>setDarMode(!darkMode)} />
             </li>
             <li>
               <a
-                className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8"
+                className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8  dark:text-white"
                 href="#"
               >
                 Resume
@@ -44,15 +50,15 @@ export default function Home() {
             {" "}
             Farooq Majeed
           </h2>
-          <h3 className="text-2xl py-2  md:text-3xl"> Full Stack Developer</h3>
-          <p className="text-md py-5 leading-8 text-gray-600  md:text-xl max-w-lg mx-auto">
+          <h3 className="text-2xl py-2  md:text-3xl  dark:text-white"> Full Stack Developer</h3>
+          <p className="text-md py-5 leading-8 text-gray-600  md:text-xl max-w-lg mx-auto  dark:text-white">
             Install tailwindcss and its peer dependencies via npm, and then run
             the init command to generate both tailwind.config.js and
             postcss.config.js.
           </p>
         </div>
 
-        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
+        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600  dark:text-white">
           <AiFillTwitterCircle />
           <AiFillLinkedin />
           <AiFillYoutube />
@@ -66,18 +72,18 @@ export default function Home() {
 
       <section>
         <div>
-          <h1 className="text-3xl py-1"> Service I offer</h1>
-          <p className="text-md py-2 leading-8 text-gray-600 ">
+          <h1 className="text-3xl py-1  dark:text-white"> Service I offer</h1>
+          <p className="text-md py-2 leading-8 text-gray-600  dark:text-white ">
             Install tailwindcss and its peer dependencies via npm, and then run
             the init command to generate both tailwind.config.js and
             postcss.config.js. Install tailwindcss and its peer dependencies via
             npm, and then run the init command to generate both
             tailwind.config.js and postcss.config.js. Install{" "}
-            <span className="text-teal-500"> Agencies </span> and its peer
+            <span className="text-teal-500 "> Agencies </span> and its peer
             dependencies via npm, and then run the init command to generate both
             tailwind.config.js and postcss.config.js.
           </p>
-          <p className="text-md py-2 leading-8 text-gray-600 ">
+          <p className="text-md py-2 leading-8 text-gray-600  dark:text-white">
             Install <span className="text-teal-500"> Agencies </span> and its
             peer dependencies via npm, and then run the init command to generate
             both tailwind.config.js and postcss.config.js.
@@ -92,18 +98,18 @@ export default function Home() {
               width={100}
               height={100}
             />
-            <h3 className="text-lg font-medium pt-8 pb-2">
+            <h3 className="text-lg font-medium pt-8 pb-2  dark:text-white">
               {" "}
               Beautiful Designs
             </h3>
-            <p className="py-2">
+            <p className="py-  dark:text-white">
               Creating elegant design suited for your need following core design
               theory for web
             </p>
-            <h4 className="py-4 text-teal-600"> Design Tools I use</h4>
-            <p className="text-gray-800 py-1 "> Photoshop </p>
-            <p className="text-gray-800 py-1 "> Adobe XD</p>
-            <p className="text-gray-800 py-1 "> Figma</p>
+            <h4 className="py-4 text-teal-600 "> Design Tools I use</h4>
+            <p className="text-gray-800 py-1  dark:text-white "> Photoshop </p>
+            <p className="text-gray-800 py-1  dark:text-white"> Adobe XD</p>
+            <p className="text-gray-800 py-1  dark:text-white"> Figma</p>
           </div>
           <div className="text-center shadow-lg p-10">
             <Image
@@ -112,18 +118,18 @@ export default function Home() {
               width={100}
               height={100}
             />
-            <h3 className="text-lg font-medium pt-8 pb-2">
+            <h3 className="text-lg font-medium pt-8 pb-2  dark:text-white">
               {" "}
               Beautiful Designs
             </h3>
-            <p className="py-2">
+            <p className="py-2  dark:text-white">
               Creating elegant design suited for your need following core design
               theory for web
             </p>
             <h4 className="py-4 text-teal-600"> Design Tools I use</h4>
-            <p className="text-gray-800 py-1 "> Photoshop </p>
-            <p className="text-gray-800 py-1 "> Adobe XD</p>
-            <p className="text-gray-800 py-1 "> Figma</p>
+            <p className="text-gray-800 py-1 dark:text-white "> Photoshop </p>
+            <p className="text-gray-800 py-1  dark:text-white"> Adobe XD</p>
+            <p className="text-gray-800 py-1  dark:text-white"> Figma</p>
           </div>
           <div className="text-center shadow-lg p-10">
             <Image
@@ -132,29 +138,29 @@ export default function Home() {
               width={100}
               height={100}
             />
-            <h3 className="text-lg font-medium pt-8 pb-2">
+            <h3 className="text-lg font-medium pt-8 pb-2  dark:text-white">
               {" "}
               Beautiful Designs
             </h3>
-            <p className="py-2">
+            <p className="py-2  dark:text-white">
               Creating elegant design suited for your need following core design
               theory for web
             </p>
             <h4 className="py-4 text-teal-600"> Design Tools I use</h4>
-            <p className="text-gray-800 py-1 "> Photoshop </p>
-            <p className="text-gray-800 py-1 "> Adobe XD</p>
-            <p className="text-gray-800 py-1 "> Figma</p>
+            <p className="text-gray-800 py-1  dark:text-white"> Photoshop </p>
+            <p className="text-gray-800 py-1  dark:text-white"> Adobe XD</p>
+            <p className="text-gray-800 py-1  dark:text-white"> Figma</p>
           </div>
         </div>
       </section>
       {/* active */}
       <section>
         <div>
-          <h3 className=" text-3xl py-2  leading-8 text-gray-600">
+          <h3 className=" text-3xl py-2  leading-8 text-gray-600  dark:text-white">
             {" "}
             Portofolio
           </h3>
-          <p className="text-md py-2 leading-8 text-gray-600 ">
+          <p className="text-md py-2 leading-8 text-gray-600  dark:text-white">
             Install tailwindcss and its peer dependencies via npm, and then run
             the init command to generate both tailwind.config.js and
             postcss.config.js. Install tailwindcss and its peer dependencies via
@@ -164,7 +170,7 @@ export default function Home() {
             dependencies via npm, and then run the init command to generate both
             tailwind.config.js and postcss.config.js.
           </p>
-          <p className="text-md py-2 leading-8 text-gray-600 ">
+          <p className="text-md py-2 leading-8 text-gray-600  dark:text-white">
             Install <span className="text-teal-500"> Agencies </span> and its
             peer dependencies via npm, and then run the init command to generate
             both tailwind.config.js and postcss.config.js.
@@ -228,5 +234,6 @@ export default function Home() {
           </div>
       </section>
     </main>
+    </div>
   );
 }
