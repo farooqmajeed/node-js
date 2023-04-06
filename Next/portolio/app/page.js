@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import {
@@ -7,8 +6,8 @@ import {
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
-
-const inter = Inter({ subsets: ["latin"] });
+import deved from "../public/dev-ed-wave.png";
+import design 
 
 export default function Home() {
   return (
@@ -31,25 +30,60 @@ export default function Home() {
             </li>
           </ul>
         </nav>
-        <div  >
-          <h2> Farooq Majeed</h2>
-          <h3> Full Stack Developer</h3>
-          <p>
+        <div className=" text-center p-10">
+          <h2 className="text-5xl py-2 text-teal-600 font-medium">
+            {" "}
+            Farooq Majeed
+          </h2>
+          <h3 className="text-2xl py-2"> Full Stack Developer</h3>
+          <p className="text-md py-5 leading-8 text-gray-600">
             Install tailwindcss and its peer dependencies via npm, and then run
             the init command to generate both tailwind.config.js and
             postcss.config.js.
           </p>
         </div>
 
-        <div className="text-5xl flex justify-center gap-16 py-3">
-          <AiFillLinkedin />
+        <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
           <AiFillTwitterCircle />
+          <AiFillLinkedin />
           <AiFillYoutube />
         </div>
-        <div>
-
+        <div className=" relative mx-auto  bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden" >
+          <Image src={deved} fill  />
         </div>
       </section>
+
+    {/* section-2 */}
+
+    <section>
+      <div>
+        <h1  className="text-3xl py-1"> Service I offer</h1>
+        <p className="text-md py-2 leading-8 text-gray-600 " >
+            Install tailwindcss and its peer dependencies via npm, and then run
+            the init command to generate both tailwind.config.js and
+            postcss.config.js.
+            Install tailwindcss and its peer dependencies via npm, and then run
+            the init command to generate both tailwind.config.js and
+            postcss.config.js.
+            Install  <span className="text-teal-500"> Agencies  </span> and its peer dependencies via npm, and then run
+            the init command to generate both tailwind.config.js and
+            postcss.config.js.
+          </p>
+          <p className="text-md py-2 leading-8 text-gray-600 " >
+          
+            Install  <span className="text-teal-500"> Agencies  </span> and its peer dependencies via npm, and then run
+            the init command to generate both tailwind.config.js and
+            postcss.config.js.
+          </p>
+      </div>
+
+      <div>
+        <div>
+          <Image src/>
+        </div>
+      </div>
+    </section>
+     
     </main>
   );
 }
