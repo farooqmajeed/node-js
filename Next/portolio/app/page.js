@@ -78,8 +78,16 @@ export default function Home() {
         </div>
 
         <div>
-          <div>
-            <Image src />
+          <div className="text-center shadow-lg">
+            <Image src={design} width={100} height={100} /> 
+            <h3 className="text-lg font-medium pt-8 pb-2"> Beautiful Designs</h3>
+            <p className="py-2">
+              Creating elegant design suited for your need following core design theory for web
+            </p>
+            <h4 className="py-4 text-teal-600"> Design Tools I use</h4>
+            <p className="text-gray-800 py-1 "> Photoshop </p>
+            <p className="text-gray-800 py-1 "> Adobe XD</p>
+            <p className="text-gray-800 py-1 "> Figma</p>
           </div>
         </div>
       </section>
