@@ -7,7 +7,9 @@ import {
   AiFillYoutube,
 } from "react-icons/ai";
 import deved from "../public/dev-ed-wave.png";
-import design 
+import design from "../public/design.png";
+import consulting from "../public/consulting.png";
+import code from "../public/code.png";
 
 export default function Home() {
   return (
@@ -48,42 +50,39 @@ export default function Home() {
           <AiFillLinkedin />
           <AiFillYoutube />
         </div>
-        <div className=" relative mx-auto  bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden" >
-          <Image src={deved} fill  />
+        <div className=" relative mx-auto  bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden">
+          <Image src={deved} fill />
         </div>
       </section>
 
-    {/* section-2 */}
+      {/* section-2 */}
 
-    <section>
-      <div>
-        <h1  className="text-3xl py-1"> Service I offer</h1>
-        <p className="text-md py-2 leading-8 text-gray-600 " >
-            Install tailwindcss and its peer dependencies via npm, and then run
-            the init command to generate both tailwind.config.js and
-            postcss.config.js.
-            Install tailwindcss and its peer dependencies via npm, and then run
-            the init command to generate both tailwind.config.js and
-            postcss.config.js.
-            Install  <span className="text-teal-500"> Agencies  </span> and its peer dependencies via npm, and then run
-            the init command to generate both tailwind.config.js and
-            postcss.config.js.
-          </p>
-          <p className="text-md py-2 leading-8 text-gray-600 " >
-          
-            Install  <span className="text-teal-500"> Agencies  </span> and its peer dependencies via npm, and then run
-            the init command to generate both tailwind.config.js and
-            postcss.config.js.
-          </p>
-      </div>
-
-      <div>
+      <section>
         <div>
-          <Image src/>
+          <h1 className="text-3xl py-1"> Service I offer</h1>
+          <p className="text-md py-2 leading-8 text-gray-600 ">
+            Install tailwindcss and its peer dependencies via npm, and then run
+            the init command to generate both tailwind.config.js and
+            postcss.config.js. Install tailwindcss and its peer dependencies via
+            npm, and then run the init command to generate both
+            tailwind.config.js and postcss.config.js. Install{" "}
+            <span className="text-teal-500"> Agencies </span> and its peer
+            dependencies via npm, and then run the init command to generate both
+            tailwind.config.js and postcss.config.js.
+          </p>
+          <p className="text-md py-2 leading-8 text-gray-600 ">
+            Install <span className="text-teal-500"> Agencies </span> and its
+            peer dependencies via npm, and then run the init command to generate
+            both tailwind.config.js and postcss.config.js.
+          </p>
         </div>
-      </div>
-    </section>
-     
+
+        <div>
+          <div>
+            <Image src />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
