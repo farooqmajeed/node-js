@@ -92,4 +92,8 @@ function greet(name: string | null | undefined){
 }
 
  
+// optional chaining "?."
 
+// customer?.birthday?.getfullYear()
+
+// optional element access operator
