@@ -70,3 +70,16 @@ type Resize = {
     resize: () => void;
 }
 type UIwidget = Draggable & Resize;
+
+let textBox: UIwidget = {
+    drag: () => {},
+    resize: () => {},
+}
+
+// Literal type (specific or exact value)
+// let quantity: = 50 | 100 = 100;
+ type Quanity = 50 | 100; // union
+let quantity: Quanity = 100;
+
+
+
