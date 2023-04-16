@@ -19,14 +19,54 @@ function calculateTax(tax: number): String {
 let employee = { id: 1 }; // this will create a new object with shape (id: number)
 employee.name = "javascript"; // valid in javascript but not in TypeScript
 
-let employeeTS: {
-  readonly id: number;
-  name: string;
-  retire: (date: Date) => void;
-} = {
-  id: 1,
-  name: "TypeScript",
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
+// let employeeTS: {
+//   readonly id: number;
+//   name: string;
+//   retire: (date: Date) => void;
+// } = {
+//   id: 1,
+//   name: "TypeScript",
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
+
+// ALias in typescript
+
+type Employee =   {
+    readonly id: number;
+    name: string;
+    retire: (date: Date) => void;
+}
+
+let employeeTS: Employee = {
+    id: 1,
+    name: "TypeScript",
+    retire: (date: Date) => {
+      console.log(date);
+    },
+  };
+
+//   Union type
+
+function kgToLb (weight: number | string): number {
+    //Narrowing
+    if(typeof weight === 'number'){
+
+    } else{
+
+    }
+
+}
+kgToLb(10);
+kgToLb('10kg');
+
+
+// intersection type
+type Draggable = {
+    drag: () => void;
+}
+type Resize = {
+    resize: () => void;
+}
+type UIwidget = Draggable & Resize;
