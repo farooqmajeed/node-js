@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react'
-// import { Dialog } from '@headlessui/react'
-// import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Dialog } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -15,6 +15,9 @@ export default function Example() {
 
   return (
     <div className="bg-white">
+     
+
+      <div className="relative isolate px-6 pt-14 lg:px-8 overflow-hidden">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -34,7 +37,7 @@ export default function Example() {
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
-              {/* <Bars3Icon className="h-6 w-6" aria-hidden="true" /> */}
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
@@ -97,8 +100,6 @@ export default function Example() {
           </Dialog.Panel>
         </Dialog>
       </header>
-
-      <div className="relative isolate px-6 pt-14 lg:px-8">
         <div
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
           aria-hidden="true"
