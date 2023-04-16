@@ -77,9 +77,19 @@ let textBox: UIwidget = {
 }
 
 // Literal type (specific or exact value)
+
+
 // let quantity: = 50 | 100 = 100;
  type Quanity = 50 | 100; // union
 let quantity: Quanity = 100;
 
+// nullable values
 
+function greet(name: string | null | undefined){
+    if(name) 
+    console.log(name.toLowerCase());
+    else console.log("Hola")
+}
+
+ 
 
